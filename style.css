@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.Home{
+    position: relative;
+    min-height: 100vh;
+    background-color: #fedfcd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 90px;
+    overflow: hidden;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 90px;
+    font-size: 22px;
+    opacity: 0;
+    animation: to-bottom 1s ease forwards;
+}
+header nav a{
+    font-size: 26px;
+    margin-left: 70px;
+    color: black;
+    transition: .3s;
+}
+header nav .active,
+header nav a:hover{
+    color: #ef4335;
+}
+.Home img{
+    position: absolute;
+    pointer-events: none;
+    width: 55%;
+    right: 0;
+    bottom: 0;
+}
+#shape{
+    width: 100%;
+}
+.text-box{
+    width: 50%;
+    z-index: 99;
+}
+.text-box h1{
+    color: #ef4335;
+    font-size: 85px;
+    animation: to-right 1s ease forwards 1.3s;
+}
+.text-box h1:nth-child(2){
+    color: black;
+    font-size: 65px;
+    animation-delay: 1.5s;
+}
+.text-box p{
+    margin: 38px 0;
+    font-size: 24px;
+    width: 82%;
+    color: #979797;
+    animation: to-right 1s ease forwards 1.7s;
+}
+.btn-box{
+    display: flex;
+    gap: 18px;
+}
+.btn{
+    position: relative;
+    color: black;
+    padding: 13px 35px;
+    font-size: 24px;
+    border: 2px solid #ef4335;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    animation: to-right 1s ease forwards 1.9s;
+}
+.btn:hover,
+.btn:nth-child(2){
+    color: white;
+    background-color: #ef4335;
+    box-shadow: 0 0 15px #ef4335;
+}
+.btn:nth-child(2):hover{
+    color: black;
+    background: transparent;
+    box-shadow: none;
+}
+.text-box *{
+    opacity: 0;
+}
+.text-box span{
+    opacity: 1;
+}
+/* keyframes */
+@keyframes to-bottom {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes to-right {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes to-top {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.layer{
+    transform: translateY(100%);
+    animation: to-top 2s ease forwards;
+}
+.sun,
+.mountains{
+    transform: translateY(100%);
+    animation: to-top 1.8s ease forwards .6s;
+}
+.sun{
+    animation-delay: 2.1s;
+}
+@keyframes birds {
+    0%{
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.birds{
+    opacity: 0;
+    animation: birds 2s ease forwards 1.7s;
+}
